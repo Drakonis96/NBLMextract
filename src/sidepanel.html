@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NotebookLM Export Panel</title>
+    <link rel="stylesheet" href="sidepanel.css">
+  </head>
+  <body>
+    <main class="panel-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">NotebookLM Exporter</p>
+          <h1>Conversation Archive</h1>
+          <p class="lead">Exporta la conversación abierta a Markdown estructurado con fuentes por respuesta.</p>
+        </div>
+        <button id="refresh-button" class="icon-button" type="button" aria-label="Actualizar estado">Actualizar</button>
+      </header>
+
+      <section class="card card-highlight" aria-live="polite">
+        <div class="card-label">Estado</div>
+        <h2 id="conversation-title" class="card-title">Buscando conversación activa…</h2>
+        <p id="conversation-summary" class="card-text">Abre una conversación de NotebookLM en la pestaña activa para habilitar la exportación.</p>
+        <dl class="stats" id="conversation-stats">
+          <div>
+            <dt>Turnos</dt>
+            <dd id="turn-count">-</dd>
+          </div>
+          <div>
+            <dt>Usuario</dt>
+            <dd id="user-count">-</dd>
+          </div>
+          <div>
+            <dt>Agente</dt>
+            <dd id="assistant-count">-</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="card action-card">
+        <button id="export-button" class="primary-button" type="button">Exportar conversación actual</button>
+        <p id="status-line" class="status-line">Haz clic en el icono de la extensión mientras tienes abierta la conversación que quieres archivar.</p>
+      </section>
+
+      <section class="card">
+        <div class="card-label">Última exportación</div>
+        <h2 id="last-export-title" class="card-title">Aún no hay exportaciones</h2>
+        <p id="last-export-meta" class="card-text">Cuando exportes, aquí verás el archivo generado y el momento exacto.</p>
+      </section>
+
+      <section class="card checklist-card">
+        <div class="card-label">Qué incluye</div>
+        <ul class="checklist">
+          <li>Orden cronológico completo de la conversación</li>
+          <li>Separación clara entre usuario y agente</li>
+          <li>Bloque de Fuentes inmediatamente después de cada respuesta</li>
+          <li>Nombre explícito de cada documento citado por NotebookLM</li>
+        </ul>
+      </section>
+    </main>
+    <script src="sidepanel.js"></script>
+  </body>
+</html>

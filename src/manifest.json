@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "NotebookLM Conversation Exporter",
+  "description": "Export the open NotebookLM conversation to structured Markdown with per-response sources.",
+  "version": "0.1.0",
+  "minimum_chrome_version": "114",
+  "permissions": [
+    "activeTab",
+    "sidePanel",
+    "storage"
+  ],
+  "action": {
+    "default_title": "Open NotebookLM export panel"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "host_permissions": [
+    "https://notebooklm.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://notebooklm.google.com/*"
+      ],
+      "js": [
+        "content-script.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

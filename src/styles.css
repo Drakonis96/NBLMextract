@@ -1,0 +1,59 @@
+#nblmextract-floating-host {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2147483647;
+}
+
+.nblmextract-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0f766e, #155e75);
+  color: #ffffff;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.22);
+  transition: transform 140ms ease, box-shadow 140ms ease, opacity 140ms ease, background 140ms ease;
+}
+
+.nblmextract-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(15, 118, 110, 0.26);
+}
+
+.nblmextract-button:disabled {
+  cursor: progress;
+  opacity: 0.78;
+}
+
+.nblmextract-button[data-state="success"] {
+  background: linear-gradient(135deg, #15803d, #166534);
+}
+
+.nblmextract-button[data-state="error"] {
+  background: linear-gradient(135deg, #b91c1c, #7f1d1d);
+}
+
+.nblmextract-button[data-state="busy"] {
+  background: linear-gradient(135deg, #0f766e, #0f766e);
+}
+
+@media (max-width: 768px) {
+  #nblmextract-floating-host {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .nblmextract-button {
+    width: min(100vw - 32px, 220px);
+  }
+}
